@@ -1,0 +1,19 @@
+[Unit]
+Description=The Open webOS logging daemon implementation
+
+[Service]
+Type=simple
+Restart=on-failure
+#--------------------------------------------------------
+# This is the PmLogDaemon setup
+#
+# Configuration:
+#  -v      = log configuration on startup
+#  -z      = use RFC 3339 timestamp format (UTC/Z)
+#  -m      = include monotonic clock
+#  -f 6    = show timestamps with high resolution (usecs)
+#--------------------------------------------------------
+ExecStart=/usr/sbin/PmLogDaemon -z -f 6 -m
+
+[Install]
+WantedBy=webos-essential.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Provides image manipulation, preference, timezone and ringtone services for webOS components
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/sbin/LunaSysService
+
+[Install]
+WantedBy=webos-base.target

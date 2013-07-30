@@ -1,0 +1,12 @@
+[Unit]
+Description=node.js fork server
+
+[Service]
+Type=simple
+Restart=on-failure
+Environment=NODE_VAR=/var/palm/node
+ExecStartPre=-/bin/sh -c 'mkdir -p ${NODE_VAR} && touch ${NODE_VAR}/fork'
+ExecStart=/usr/palm/nodejs/node --max_old_space_size=23068672 /usr/palm/nodejs/fork_server.js
+
+[Install]
+WantedBy=webos-base.target

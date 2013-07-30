@@ -1,0 +1,10 @@
+[Unit]
+Description=webOS database service
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/sbin/mojodb-luna -c /etc/palm/mojodb.conf /var/db
+
+[Install]
+WantedBy=webos-base.target

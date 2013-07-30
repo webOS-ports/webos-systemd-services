@@ -1,0 +1,10 @@
+[Unit]
+Description=webOS connman adaptation daemon
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/sbin/webos-connman-adapter
+
+[Install]
+WantedBy=webos-base.target

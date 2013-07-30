@@ -1,0 +1,11 @@
+[Unit]
+Description=Luna Service - private bus
+Requires=PmLogDaemon.service
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/sbin/ls-hubd --conf /etc/luna-service2/ls-private.conf --pmloglib
+
+[Install]
+WantedBy=webos-essential.target

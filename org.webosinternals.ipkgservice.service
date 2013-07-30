@@ -1,0 +1,13 @@
+[Unit]
+Description=webOS internals ipkg service
+
+[Service]
+Type=simple
+Restart=on-failure
+Environment=APPS=/media/cryptofs/apps
+# Remove erroneously large list database cache files
+ExecStartPre=-/bin/sh -c '[ -d ${APPS}/usr/lib/ipkg/lists ] && find $APPS/usr/lib/ipkg/lists -size +10240k -delete'
+ExecStart=/usr/sbin/org.webosinternals.ipkgservice
+
+[Install]
+WantedBy=webos-base.target

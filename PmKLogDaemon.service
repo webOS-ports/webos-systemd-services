@@ -1,0 +1,10 @@
+[Unit]
+Description=The Open webOS kernel logging daemon implementation
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/sbin/PmKLogDaemon -n -d 1
+
+[Install]
+WantedBy=webos-essential.target
