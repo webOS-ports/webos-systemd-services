@@ -1,6 +1,7 @@
 [Unit]
 Description=Luna Service - private bus
 Requires=PmLogDaemon.service
+After=PmLogDaemon.service
 
 [Service]
 Type=simple
