@@ -1,2 +1,5 @@
 [Unit]
 Description=Starts up the essential system daemons for the webOS system
+
+[Install]
+WantedBy=basic.target
