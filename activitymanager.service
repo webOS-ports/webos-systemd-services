@@ -1,12 +1,13 @@
 [Unit]
 Description=webOS service to manage all running activities
+After=configurator.service
 Requires=configurator.service
 
 [Service]
 Type=simple
 Restart=on-failure
-ExecStartPre=-/usr/bin/luna-send -n 1 palm://com.palm.configurator/run '{"types":["activities"]}'
 ExecStart=/usr/sbin/activitymanager -c {\"log\":{\"appender\":{\"type\":\"syslog\"},\"levels\":{\"default\":\"warning\"}}}
+ExecStartPost=/usr/bin/luna-send -n 1 palm://com.palm.configurator/run '{"types":["activities"]}'
 
 [Install]
 WantedBy=webos-base.target
