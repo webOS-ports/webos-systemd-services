@@ -4,7 +4,7 @@ Description=webOS telephony daemon
 [Service]
 Type=simple
 Restart=on-failure
-ExecStart=/usr/sbin//usr/sbin/webos-telephonyd
+ExecStart=/usr/sbin/webos-telephonyd
 
 [Install]
 WantedBy=webos-base.target
