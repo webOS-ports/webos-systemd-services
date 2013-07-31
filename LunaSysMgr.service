@@ -1,0 +1,10 @@
+[Unit]
+Description=Luna System Manager
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/bin/LunaSysMgr
+
+[Install]
+WantedBy=webos-base.target
