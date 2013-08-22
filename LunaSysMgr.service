@@ -4,7 +4,7 @@ Description=Luna System Manager
 [Service]
 Type=simple
 Restart=on-failure
-ExecStart=/usr/bin/LunaSysMgr
+ExecStart=/usr/sbin/LunaSysMgr
 
 [Install]
 WantedBy=webos-base.target
