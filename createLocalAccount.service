@@ -1,0 +1,9 @@
+[Unit]
+Description=Create local account on first boot
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/createLocalAccount.sh
+
+[Install]
+WantedBy=webos-base.target
