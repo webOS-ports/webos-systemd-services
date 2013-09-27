@@ -7,7 +7,6 @@ Requires=configurator.service
 Type=simple
 Restart=on-failure
 ExecStart=/usr/sbin/activitymanager -c {\"log\":{\"appender\":{\"type\":\"syslog\"},\"levels\":{\"default\":\"warning\"}}}
-ExecStartPost=/usr/bin/luna-send -n 1 palm://com.palm.configurator/run '{"types":["activities"]}'
 
 [Install]
-WantedBy=webos-base.target
+WantedBy=multi-user.target

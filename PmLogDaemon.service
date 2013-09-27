@@ -1,5 +1,7 @@
 [Unit]
 Description=The Open webOS logging daemon implementation
+Requires=ls-hubd_private.service ls-hubd_public.service
+After=ls-hubd_private.service ls-hubd_public.service
 
 [Service]
 Type=simple
@@ -16,4 +18,4 @@ Restart=on-failure
 ExecStart=/usr/sbin/PmLogDaemon -z -f 6 -m
 
 [Install]
-WantedBy=webos-essential.target
+WantedBy=multi-user.target

@@ -1,7 +1,7 @@
 [Unit]
 Description=webOS service to create necessary database schema for applications
-After=filecache.service
-Requires=filecache.service
+After=filecache.service db8.service
+Requires=filecache.service db8.service
 
 [Service]
 Type=oneshot
@@ -9,6 +9,5 @@ Restart=no
 ExecStart=/usr/bin/luna-send -n 1 palm://com.palm.configurator/run '{"types":["dbkinds","filecache"]}'
 ExecStart=/usr/bin/luna-send -n 1 palm://com.palm.configurator/run '{"types":["dbpermissions"]}'
 
-
 [Install]
-WantedBy=webos-base.target
+WantedBy=multi-user.target

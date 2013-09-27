@@ -1,5 +1,7 @@
 [Unit]
 Description=Provides image manipulation, preference, timezone and ringtone services for webOS components
+After=filecache.service
+Requires=filecache.service
 
 [Service]
 Type=simple
@@ -7,4 +9,4 @@ Restart=on-failure
 ExecStart=/usr/sbin/LunaSysService
 
 [Install]
-WantedBy=webos-base.target
+WantedBy=multi-user.target
