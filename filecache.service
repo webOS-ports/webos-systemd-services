@@ -4,7 +4,7 @@ Description=webOS file caching daemon
 [Service]
 Type=simple
 Restart=on-failure
-ExecStart=/usr/sbin/filecache -c {\"log\":{\"appender\":{\"type\":\"syslog\"},\"levels\":{\"default\":\"warning\"}}}
+ExecStart=/usr/sbin/filecache -c '{\"log\":{\"appender\":{\"type\":\"syslog\"},\"levels\":{\"default\":\"warning\"}}}'
 
 [Install]
 WantedBy=webos-base.target
