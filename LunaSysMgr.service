@@ -1,7 +1,7 @@
 [Unit]
 Description=Luna System Manager
-After=LunaSysService.service
-Requires=LunaSysService.service
+After=LunaSysService.service luna-next.service
+Requires=LunaSysService.service luna-next.service
 
 [Service]
 Type=simple
