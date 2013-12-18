@@ -6,7 +6,8 @@ After=ls-hubd_private.service ls-hubd_public.service
 [Service]
 Type=simple
 Restart=on-failure
-ExecStart=/usr/sbin/mojodb-luna -c /etc/palm/mojodb.conf /var/db
+ExecStartPre=-/usr/bin/db8-prestart.sh
+ExecStart=/usr/sbin/mojodb-luna -c /etc/palm/mojodb.conf /var/db /media/cryptofs/data/db8/mediadb
 
 [Install]
 WantedBy=multi-user.target
