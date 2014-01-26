@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -e /tmp/db8-initialized ] ;
+	exit 1
+fi
+
 # remove temp db
 if [ -e /var/db/temp ]; then
 	rm -r /var/db/temp
@@ -13,5 +17,7 @@ fi
 if [ -d /var/run/db8 ]; then
 	rm -rf /var/run/db8
 fi
+
+touch /tmp/db8-initialized
 
 mkdir -p /var/run/db8/mountpoints

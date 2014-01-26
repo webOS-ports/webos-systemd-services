@@ -1,5 +1,5 @@
 [Unit]
-Description=webOS database service
+Description=webOS %i database service
 Requires=ls-hubd_private.service ls-hubd_public.service
 After=ls-hubd_private.service ls-hubd_public.service
 
@@ -7,7 +7,7 @@ After=ls-hubd_private.service ls-hubd_public.service
 Type=simple
 Restart=on-failure
 ExecStartPre=-/usr/bin/db8-prestart.sh
-ExecStart=/usr/sbin/mojodb-luna -c /etc/palm/mojodb.conf /var/db /media/cryptofs/data/db8/mediadb
+ExecStart=/usr/sbin/mojodb-luna -c /etc/palm/db8/%i.conf
 
 [Install]
 WantedBy=multi-user.target
