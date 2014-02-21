@@ -4,7 +4,7 @@ Description=Luna Service - private bus
 [Service]
 Type=notify
 Restart=on-failure
-ExecStart=/usr/sbin/ls-hubd --public --conf /etc/luna-service2/ls-public.conf --pmloglib
+ExecStart=/usr/sbin/ls-hubd --public --conf /etc/luna-service2/ls-public.conf
 OOMScoreAdjust=-1000
 
 [Install]
