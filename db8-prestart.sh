@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -e /tmp/db8-initialized ] ;
+if [ -e /tmp/db8-initialized ] ; then
 	exit 1
 fi
 
