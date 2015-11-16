@@ -1,5 +1,5 @@
 [Unit]
-Description=Luna Service - private bus
+Description=Luna Service - public bus
 
 [Service]
 Type=notify
