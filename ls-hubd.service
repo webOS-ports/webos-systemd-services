@@ -1,0 +1,11 @@
+[Unit]
+Description=Luna Service Bus
+
+[Service]
+Type=notify
+Restart=on-failure
+ExecStart=/usr/sbin/ls-hubd --conf /etc/luna-service2/ls-hubd.conf
+OOMScoreAdjust=-1000
+
+[Install]
+RequiredBy=basic.target
